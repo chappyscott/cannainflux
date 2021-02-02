@@ -36,7 +36,7 @@ export class OrderEditComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('chipList') chipList: MatChipList;
 
 
-  pageTitle = 'Create an Invoice';
+  pageTitle = 'Invoice / Create';
   // HTML Only variables - stored as an array but for error checking on the users
 
   errorMessage: string;

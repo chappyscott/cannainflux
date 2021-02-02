@@ -11,7 +11,7 @@ import { TeamService } from './team.service';
 })
 
 export class TeamComponent implements OnInit {
-  pageTitle = '2019 NCAA Wrestling Teams';
+  pageTitle = 'Dispensaries';
   sealBaseUrl = 'assets/images/NCAAWrestlingTeams/NCAAWrestlingSchoolSeals/';
   mascotBaseUrl = 'assets/images/NCAAWrestlingTeams/NCAAWrestlingMascotLogo/';
   imageHeight = 25;

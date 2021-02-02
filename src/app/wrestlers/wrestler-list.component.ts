@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 export class WrestlerComponent implements OnInit, AfterContentInit, OnDestroy {
 
-pageTitle = '2019-20 NCAA Wrestling Wrestlers';
+pageTitle = 'Products';
 imageWidth = 50;
 imageMargin = 2;
 showImage$: Observable<boolean>;

@@ -8,7 +8,7 @@ import { OrderService } from './order.service';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  pageTitle = 'History of orders';
+  pageTitle = 'Orders / History';
   imageWidth = 50;
   imageMargin = 2;
   showImage = true;

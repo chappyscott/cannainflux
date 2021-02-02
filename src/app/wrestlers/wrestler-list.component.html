@@ -36,12 +36,9 @@
                   {{(showImage$ | async) ? "Hide" : "Show"}} Image
                 </button>
               </th>
-              <th>Last Name</th>
-              <th>First Name</th>
-              <th>College</th>
-              <th>Weight</th>
-              <th>Record</th>
-              <th>Home Town</th>
+              <th>Product Name</th>
+              <th>Description</th>
+              <th>Cost</th>
               <th></th>
             </tr>
           </thead>
@@ -65,9 +62,6 @@
               </a>
               </td>
               <td>{{ wrestler.wrestlerCollege }}</td>
-              <td>{{ wrestler.wrestlerWeight }}</td>
-              <td><span *ngIf="wrestler.wrestlerWins && wrestler.wrestlerLoses">{{ wrestler.wrestlerWins }} - {{ wrestler.wrestlerLoses }}</span></td>
-              <td><span *ngIf="wrestler.wrestlerHometownCity && wrestler.wrestlerHometownState">{{ wrestler.wrestlerHometownCity }}, {{ wrestler.wrestlerHometownState }}</span></td>
               <td>
                 <button class="btn btn-outline-primary btn-sm"
                         [routerLink]="['/wrestlers', wrestler.id, 'edit']">

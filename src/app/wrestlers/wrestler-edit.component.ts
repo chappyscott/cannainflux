@@ -18,14 +18,14 @@ import { GenericValidator } from '../shared/generic-validator';
 export class WrestlerEditComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
 
-  pageTitle = 'Edit a wrestler';
+  pageTitle = 'Product / Create';
   errorMessage: string;
   wrestlerForm: FormGroup;
 
   wrestler: Wrestler;
   private sub: Subscription;
   colleges: any[];
-  
+
   // Use with the generic validation message class
   displayMessage: { [key: string]: string } = {};
   private validationMessages: { [key: string]: { [key: string]: string } };
@@ -73,7 +73,7 @@ export class WrestlerEditComponent implements OnInit, AfterViewInit, OnDestroy {
       wrestlerMiddleName: '',
       wrestlerYearCollege: '',
       wrestlerHeight: '',
-      wrestlerWeight: '', 
+      wrestlerWeight: '',
       wrestlerHometownCity: '',
       wrestlerHometownState: '',
       wrestlerHighSchool: '',
@@ -86,12 +86,12 @@ export class WrestlerEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.collegeNames.getTeamNames().subscribe({
       next: teams => {
-        this.colleges = teams; 
+        this.colleges = teams;
         console.log(this.colleges);
       },
       error: err => this.errorMessage = err
     });
-    
+
     // Read the wrestlerId from the route parameter
     this.sub = this.route.paramMap.subscribe(
       params => {
@@ -135,9 +135,9 @@ export class WrestlerEditComponent implements OnInit, AfterViewInit, OnDestroy {
     this.wrestler = wrestler;
 
     if (this.wrestler.id === 0) {
-      this.pageTitle = 'Create a wrestler';
+      this.pageTitle = 'Products / Create';
     } else {
-      this.pageTitle = `Edit a wrestler: ${this.wrestler.wrestlerFirstName} ${this.wrestler.wrestlerLastName}`;
+      this.pageTitle = `Products / Edit: ${this.wrestler.wrestlerFirstName} ${this.wrestler.wrestlerLastName}`;
     }
 
     // Update the data on the form
@@ -147,7 +147,7 @@ export class WrestlerEditComponent implements OnInit, AfterViewInit, OnDestroy {
       wrestlerLastName: this.wrestler.wrestlerLastName,
       wrestlerYearCollege: this.wrestler.wrestlerYearCollege,
       wrestlerHeight: this.wrestler.wrestlerHeight,
-      wrestlerWeight: this.wrestler.wrestlerWeight, 
+      wrestlerWeight: this.wrestler.wrestlerWeight,
       wrestlerHometownCity: this.wrestler.wrestlerHometownCity,
       wrestlerHometownState: this.wrestler.wrestlerHometownState,
       wrestlerHighSchool: this.wrestler.wrestlerHighSchool,
