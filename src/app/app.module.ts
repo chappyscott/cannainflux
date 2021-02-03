@@ -162,7 +162,7 @@ import { MatTreeModule } from '@angular/material/tree';
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
-    ], { enableTracing: false }), // true if you want to track it
+    ], { enableTracing: false, relativeLinkResolution: 'legacy' }), // true if you want to track it
     BracketsModule,
     WrestlerModule,
     PoolModule,
