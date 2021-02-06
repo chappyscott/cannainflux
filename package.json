@@ -10,7 +10,8 @@
     "start:docker:bash": "npm run docker:build && docker run --name cannainflux-dev -it --rm --volume C:\\dev\\github\\chappyscott\\cannainflux:/src -p 4200:4200 cannainflux bash",
     "start:docker:bash2": "npm run docker:build && docker run --name cannainflux-dev2 -it --rm --volume C:\\dev\\github\\chappyscott\\cannainflux:/src -p 4201:4200 cannainflux bash",
     "build": "ng build",
-    "test": "ng test",
+    "test": "npx jest",
+    "test:watch": "npx jest --watch",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -42,6 +43,7 @@
     "jasmine-spec-reporter": "6.0.0",
     "jest": "26.6.3",
     "karma-coverage": "~2.0.3",
+    "prettier": "2.2.1",
     "protractor": "~7.0.0",
     "ts-node": "9.1.1",
     "tslint": "~6.1.0",
