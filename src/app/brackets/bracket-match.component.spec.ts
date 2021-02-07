@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { BracketMatchComponent } from './bracket-match.component';
 
@@ -7,7 +7,7 @@ describe('BracketMatchComponent', () => {
   let component: BracketMatchComponent;
   let fixture: ComponentFixture<BracketMatchComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ BracketMatchComponent ]
     })
