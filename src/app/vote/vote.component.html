@@ -1,0 +1,4 @@
+<label for="yourvote">Vote</label>
+<input name="yourvote" type="number" readonly [(ngModel)]="vote" />
+<button id="upvote" class="button" (click)="handleVote(1)">Up</button>
+<button id="downvote" (click)="handleVote(-1)">down</button>
