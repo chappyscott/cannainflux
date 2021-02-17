@@ -44,38 +44,38 @@ describe('AppComponent', () => {
     expect(dom.querySelector('.content span').textContent).toContain('cannainflux app is running!');
   });
 
-  test('should set alertText through ngModel', () => {
-    fixture.detectChanges();
+  // test('should set alertText through ngModel', () => {
+  //   fixture.detectChanges();
 
-    alertTextEl.value = 'HelloWorld';
-    alertTextEl.dispatchEvent(new Event('input'));
+  //   alertTextEl.value = 'HelloWorld';
+  //   alertTextEl.dispatchEvent(new Event('input'));
 
-    fixture.detectChanges();
-    expect(component.alertText).toEqual('HelloWorld');
-  });
+  //   fixture.detectChanges();
+  //   expect(component.alertText).toEqual('HelloWorld');
+  // });
 
-  test('should update HTML through alertText property', () => {
-    fixture.detectChanges();
-    component.alertText = 'HelloWorld!';
-    alertTextEl.dispatchEvent(new Event('input'));
+  // test('should update HTML through alertText property', () => {
+  //   fixture.detectChanges();
+  //   component.alertText = 'HelloWorld!';
+  //   alertTextEl.dispatchEvent(new Event('input'));
 
-    fixture.detectChanges();
-    expect(alertTextEl.value).toEqual(component.alertText);
-  });
+  //   fixture.detectChanges();
+  //   expect(alertTextEl.value).toEqual(component.alertText);
+  // });
 
-  test('clicking button should call handleAlert', fakeAsync(() => {
-    spyOn(component, 'handleAlert');
+  // test('clicking button should call handleAlert', fakeAsync(() => {
+  //   spyOn(component, 'handleAlert');
 
-    alertButtonEl.click();
+  //   alertButtonEl.click();
 
-    tick();
-    expect(component.handleAlert).toHaveBeenCalled();
-  }));
+  //   tick();
+  //   expect(component.handleAlert).toHaveBeenCalled();
+  // }));
 
-  test('should alert when button clicked', () => {
-    spyOn(window, 'alert');
-    component.alertText = 'Alert test';
-    alertButtonEl.click();
-    expect(window.alert).toHaveBeenCalledWith(component.alertText);
-  });
+  // test('should alert when button clicked', () => {
+  //   spyOn(window, 'alert');
+  //   component.alertText = 'Alert test';
+  //   alertButtonEl.click();
+  //   expect(window.alert).toHaveBeenCalledWith(component.alertText);
+  // });
 });

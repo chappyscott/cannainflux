@@ -1,0 +1,104 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveProduct()"
+          [formGroup]="productForm" autofocus>
+          <div class="form-group row mb-4">
+            <label class="col-md-2 col-form-label"
+                   for="productNameId">Product Name:</label>
+            <div class="col-md-8">
+              <input class="form-control"
+                     id="productNameId"
+                     type="text"
+                     placeholder="What it is - Strain - size (required)"
+                     formControlName="productName"
+                     [ngClass]="{'is-invalid': displayMessage.productName }" />
+              <span class="invalid-feedback">
+                {{displayMessage.productName}}
+              </span>
+            </div>
+          </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="productTypeId">Product Type:</label>
+        <div class="col-md-8">
+          <select id="productTypeId" formControlName="productType">
+            <option [attr.selected]="productType=='Flower' ? true :  null" value="Flower">Flower</option>
+            <option [attr.selected]="productType=='Concentrates' ? true :  null" value="Concentrate">Concentrates</option>
+          </select>
+          <span class="invalid-feedback">
+            {{displayMessage.productType}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="productNotesId">Notes:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="productNotesId"
+                 type="text"
+                 placeholder="Some Notes here"
+                 formControlName="productNotes"
+                 [ngClass]="{'is-invalid': displayMessage.productNotes }" />
+          <span class="invalid-feedback">
+            {{displayMessage.productNotes}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="productPriceId">Price:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="productPriceId"
+                 type="text"
+                 placeholder="401 Chicago Avenue (required)"
+                 formControlName="productPrice"
+                 [ngClass]="{'is-invalid': displayMessage.productPrice }" />
+          <span class="invalid-feedback">
+            {{displayMessage.productPrice}}
+          </span>
+        </div>
+      </div>
+
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="productForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!productForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/products']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this product"
+                  (click)="deleteProduct()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>
