@@ -375,16 +375,17 @@
   </div>
 
   <!--Material Demo-->
-  Product<input matInput placeholder="Blue Dream RSO 1g" [(ngModel)]="alertText" />
-  Notes<textarea matTextArea placeholder="Description" [(ngModel)]="notesArea" ></textarea>
+  Product<input matInput placeholder="Blue Dream RSO 1g" [(ngModel)]="alertText" /> Notes<textarea
+    matTextArea
+    placeholder="Description"
+    [(ngModel)]="notesArea"
+  ></textarea>
   Price<input matInput placeholder="$420" [(ngModel)]="productPrice" />
   <button mat-raised-button color="primary" (click)="handleAlert()">Alert</button>
   <button mat-raised-button color="secondary" (click)="handleCreatePDF()">Save PDF</button>
 
   <!-- Footer -->
-  <footer>
-ngMafia
-  </footer>
+  <footer>ngMafia</footer>
 
   <svg
     id="clouds"

@@ -6,17 +6,14 @@ import { ProductsService } from './products-service';
 
 @Component({
   templateUrl: './products-detail.component.html',
-  styleUrls: ['./products-detail.component.css']
+  styleUrls: ['./products-detail.component.css'],
 })
 export class ProductsDetailComponent implements OnInit {
   pageTitle = 'Product Details';
   errorMessage = '';
   product: Product | undefined;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
-              private productsService: ProductsService) {
-  }
+  constructor(private route: ActivatedRoute, private router: Router, private productsService: ProductsService) {}
 
   ngOnInit() {
     const param = this.route.snapshot.paramMap.get('id');
@@ -30,8 +27,8 @@ export class ProductsDetailComponent implements OnInit {
 
   getProduct(id: number) {
     this.productsService.getProduct(id).subscribe({
-      next: product => this.product = product,
-      error: err => this.errorMessage = err
+      next: (product) => (this.product = product),
+      error: (err) => (this.errorMessage = err),
     });
     // console.log(product);
   }
@@ -39,5 +36,4 @@ export class ProductsDetailComponent implements OnInit {
   onBack(): void {
     this.router.navigate(['/products']);
   }
-
 }

@@ -1,5 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -8,9 +11,9 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
+      declarations: [HomeComponent],
+      imports: [RouterTestingModule, FormsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +22,13 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  test('title should be displayed', () => {
+    const result = fixture.nativeElement.querySelector('.card-header').innerHTML;
+
+    expect(result).toContain(component.pageTitle);
   });
 });
