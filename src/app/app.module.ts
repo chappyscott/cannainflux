@@ -1,4 +1,5 @@
 import { ProductsData } from './products/products.data';
+import { DispensariesData } from './dispensaries/dispensaries.data';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -13,10 +14,10 @@ import { MatInputModule } from '@angular/material/input';
 
 // Import Component Modules
 import { ProductsModule } from './products/products.module';
+import { DispensariesModule } from './dispensaries/dispensaries.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-
-
+import { DispensariesListComponent } from './dispensaries/dispensaries-list.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -29,6 +30,8 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatInputModule,
     ProductsModule,
+    DispensariesModule,
+    //InMemoryWebApiModule.forRoot([ProductsData,DispensariesData]),
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },

@@ -22,7 +22,7 @@ import { ProductsData } from './products.data';
   imports: [
     SharedModule,
     ReactiveFormsModule,
-    InMemoryWebApiModule.forRoot(ProductsData),
+    //InMemoryWebApiModule.forRoot(ProductsData),
     RouterModule.forChild([
       { path: 'products', component: ProductsListComponent },
       { path: 'products/:id', component: ProductsDetailComponent },

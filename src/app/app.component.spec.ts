@@ -31,18 +31,22 @@ describe('AppComponent', () => {
     alertButtonEl = dom.querySelector('button');
   }));
 
-  test('should exist', () => {
+  it('should exist', () => {
     expect(component).toBeDefined();
   });
 
-  test('title should be Welcome to cannainflux', () => {
+  /*test('should exist', () => {
+    expect(component).toBeDefined();
+  });*/
+
+  /*test('title should be Welcome to cannainflux', () => {
     expect(component.title).toEqual('cannainflux');
   });
 
   test('should render title', () => {
     fixture.detectChanges();
     expect(dom.querySelector('.content span').textContent).toContain('cannainflux app is running!');
-  });
+  });*/
 
   // test('should set alertText through ngModel', () => {
   //   fixture.detectChanges();
