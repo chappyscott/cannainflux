@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Dispensary } from './dispensaries';
 import { DispensariesService } from './dispensaries-service';
 
-
 @Component({
   templateUrl: './dispensaries-list.component.html',
-  styleUrls: ['./dispensaries-list.component.css']
+  styleUrls: ['./dispensaries-list.component.css'],
 })
 export class DispensariesListComponent implements OnInit {
   pageTitle = 'Dispensaries';
@@ -27,12 +26,13 @@ export class DispensariesListComponent implements OnInit {
   filteredDispensaries: Dispensary[] = [];
   dispensaries: Dispensary[] = [];
 
-  constructor(private dispensaryService: DispensariesService) { }
+  constructor(private dispensaryService: DispensariesService) {}
 
   performFilter(filterBy: string): Dispensary[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.dispensaries.filter((dispensary: Dispensary) =>
-      dispensary.dispensaryName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.dispensaries.filter(
+      (dispensary: Dispensary) => dispensary.dispensaryName.toLocaleLowerCase().indexOf(filterBy) !== -1
+    );
   }
 
   toggleImage(): void {
@@ -41,12 +41,11 @@ export class DispensariesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.dispensaryService.getDispensaries().subscribe({
-      next: dispensaries => {
+      next: (dispensaries) => {
         this.dispensaries = dispensaries;
         this.filteredDispensaries = this.dispensaries;
       },
-      error: err => this.errorMessage = err
+      error: (err) => (this.errorMessage = err),
     });
   }
 }
-
