@@ -20,6 +20,15 @@ import { jsPDF } from 'jspdf';
             >Products</a
           >
         </li>
+        <li>
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="['/dispensaries']"
+            >Dispensaries</a
+          >
+        </li>
       </ul>
     </nav>
     <div class="container">

@@ -1,4 +1,3 @@
-import { ProductsData } from './products/products.data';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -13,10 +12,11 @@ import { MatInputModule } from '@angular/material/input';
 
 // Import Component Modules
 import { ProductsModule } from './products/products.module';
+import { DispensariesModule } from './dispensaries/dispensaries.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { CanninfluxService } from './canninflux.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -29,11 +29,16 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatInputModule,
     ProductsModule,
-    RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' }
-    ], { enableTracing: false }), // true if you want to track it
+    DispensariesModule,
+    HttpClientInMemoryWebApiModule.forRoot(CanninfluxService),
+    RouterModule.forRoot(
+      [
+        { path: 'home', component: HomeComponent },
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
+        { path: '**', redirectTo: 'home', pathMatch: 'full' },
+      ],
+      { enableTracing: false }
+    ), // true if you want to track it
   ],
   providers: [],
   bootstrap: [AppComponent],
